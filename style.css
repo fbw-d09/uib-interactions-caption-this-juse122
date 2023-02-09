@@ -1,0 +1,84 @@
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition: 0.1s;
+}
+
+:root {
+    font-size: 62.5%;
+    font-family: 'Arial', sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opacity {
+    position: absolute;
+    top: calc(50vh - 383px);
+    width: 781px;
+    height: 766px;
+    z-index: 10;
+    background-color: black;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: calc(50vh - 383px);
+    width: 781px;
+    height: 766px;
+    z-index: 11;
+    opacity: 0;
+    transition: 0.5s;
+    font-size: 36px;
+    color: white;
+}
+
+.text-container h1 {
+    font-size: 72px;
+    padding: 20px;
+}
+
+.pic-container {
+    overflow: hidden;
+}
+
+.image {
+    transition: 0.5s;
+}
+
+.pic-container:hover {
+    transition: 0.5s;
+}
+
+.pic-container:hover > .image {
+    rotate: 20deg;
+    scale: 1.2;
+}
+
+.pic-container:hover > .opacity {
+    opacity: 0.5;
+}
+
+.pic-container:hover > .text-container {
+    opacity: 1;
+}
